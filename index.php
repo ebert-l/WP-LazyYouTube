@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./lazyYouTube.css">
 </head>
 <body>
-    <div class="video-frame" data-video-id="oXS5M2CDu9I">  
+    <div class="video-frame" data-video-id="oXS5M2CDu9I" tabindex="0">  
     </div>
 </body>
 </html>

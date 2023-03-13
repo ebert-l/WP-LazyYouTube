@@ -1,23 +1,46 @@
 .video-frame{
     width:600px;
     aspect-ratio:16/9;
-    background-color:#ccc;
     overflow:hidden;
     position:relative;
-  }
-  
-  .thumbnail{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-position:50% 50%;
-    object-fit:cover;
-    cursor:pointer;
-  }
-  .video{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-  }
+}
+.video-frame::before,
+.video-frame::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events: none;
+}
+.video-frame::after{
+  background-color:#ccc;
+  border:0.5rem dashed red;
+  z-index:-1;
+}
+.video-frame::before{
+  background-image: url(./assets/yt-btn.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow:inset 0px 0px 1rem 0.5rem black;
+  z-index:1;
+}
+.video-frame:hover::before,
+.video-frame:focus::before{
+  filter:brightness(1.2);
+}
+
+.thumbnail{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-position:50% 50%;
+  object-fit:cover;
+  cursor:pointer;
+}
+.video{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+}
